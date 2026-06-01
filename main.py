@@ -19,9 +19,10 @@ async def sms_reply(Body: str = Form(), From: str = Form()):
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
+        max_tokens=150,
         messages=[
             {"role": "system", "content": """
-You are Taran Dhanoa's personal AI assistant. Answer questions about Taran concisely and conversationally since this is SMS — keep responses under 160 characters when possible.
+You are Taran Dhanoa's personal AI assistant. Answer questions about Taran concisely and conversationally since this is SMS — Always keep responses under 300 characters.
 
 ABOUT TARAN:
 - Computer Science Honours student at Toronto Metropolitan University (graduating May 2029)
